@@ -1,0 +1,47 @@
+﻿@model Mesaj
+@{
+    ViewData["Title"] = "Sil";
+    Layout = "~/Views/Shared/_LayoutYonetim.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-heading border bottom">
+            <h4 class="card-title text-center">Mesaj Sil</h4>
+        </div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-9 ml-auto mr-auto">
+                    <form asp-controller="YonetimMesaj" asp-action="Sil" method="post" enctype="multipart/form-data" class="form-horizontal mrg-top-40 pdd-right-30 ng-pristine ng-valid">
+                        <div class="form-group">
+                            <label>Numara</label>
+                            <input type="text" class="form-control" asp-for="Id" value="@Model.Id" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Eklenme Tarihi</label>
+                            <input type="text" class="form-control" asp-for="EklenmeTarihi" value="@Model.EklenmeTarihi" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Ad Soyad</label>
+                            <input type="text" class="form-control" asp-for="AdSoyad" value="@Model.AdSoyad" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Mail Adresi</label>
+                            <input type="text" class="form-control" asp-for="MailAdresi" value="@Model.MailAdresi" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Başlık</label>
+                            <input type="text" class="form-control" asp-for="Baslik" value="@Model.Baslik" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>İçerik</label>
+                            <input type="text" class="form-control" asp-for="Icerik" value="@Model.Icerik" readonly>
+                        </div>
+                        <center><button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Mesaj Sil</button></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

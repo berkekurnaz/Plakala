@@ -1,0 +1,39 @@
+﻿@model Mesaj
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_LayoutYonetim.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-heading border bottom">
+            <h4 class="card-title text-center">Yeni Mesaj Ekle</h4>
+        </div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-9 ml-auto mr-auto">
+                    <form asp-controller="YonetimMesaj" asp-action="Ekle" method="post" enctype="multipart/form-data" class="form-horizontal mrg-top-40 pdd-right-30 ng-pristine ng-valid">
+                        <div class="form-group">
+                            <label>Ad Soyad</label>
+                            <input type="text" class="form-control" asp-for="AdSoyad" placeholder="Ad Soyad Giriniz...">
+                        </div>
+                        <div class="form-group">
+                            <label>Mail Adresi</label>
+                            <input type="text" class="form-control" asp-for="MailAdresi" placeholder="Mail Adresi Giriniz...">
+                        </div>
+                        <div class="form-group">
+                            <label>Başlık</label>
+                            <input type="text" class="form-control" asp-for="Baslik" placeholder="Başlık Giriniz...">
+                        </div>
+                        <div class="form-group">
+                            <label>İçerik</label>
+                            <input type="text" class="form-control" asp-for="Icerik" placeholder="İçerik Giriniz...">
+                        </div>
+                        <center><button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i> Yeni Mesaj Ekle</button></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

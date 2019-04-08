@@ -1,0 +1,31 @@
+﻿@model Kullanici
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_LayoutYonetim.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-heading border bottom">
+            <h4 class="card-title text-center">Yeni Plaka Ekle</h4>
+        </div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-9 ml-auto mr-auto">
+                    <form asp-controller="YonetimKullanici" asp-action="Ekle" method="post" enctype="multipart/form-data" class="form-horizontal mrg-top-40 pdd-right-30 ng-pristine ng-valid">
+                        <div class="form-group">
+                            <label>Kullanıcı Adı</label>
+                            <input type="text" class="form-control" asp-for="KullaniciAdi" placeholder="Kullanıcı Adı Giriniz...">
+                        </div>
+                        <div class="form-group">
+                            <label>Şifre</label>
+                            <input type="text" class="form-control" asp-for="Sifre" placeholder="Şifre Giriniz...">
+                        </div>
+                        <center><button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i> Yeni Kullanıcı Ekle</button></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

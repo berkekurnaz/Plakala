@@ -1,0 +1,35 @@
+﻿@model Yorum
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_LayoutYonetim.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-heading border bottom">
+            <h4 class="card-title text-center">Yeni Yorum Ekle</h4>
+        </div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-9 ml-auto mr-auto">
+                    <form asp-controller="YonetimYorum" asp-action="Ekle" method="post" enctype="multipart/form-data" class="form-horizontal mrg-top-40 pdd-right-30 ng-pristine ng-valid">
+                        <div class="form-group">
+                            <label>Plaka Id</label>
+                            <input type="text" class="form-control" asp-for="PlakaId" placeholder="Plaka Id Giriniz...">
+                        </div>
+                        <div class="form-group">
+                            <label>Plaka Id</label>
+                            <input type="text" class="form-control" asp-for="PlakaYorum" placeholder="Plaka Yorum Giriniz...">
+                        </div>
+                        <div class="form-group">
+                            <label>Fotoğraf</label>
+                            <input class="form-control" type="file" name="Image" />
+                        </div>
+                        <center><button type="submit" class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i> Yeni Yorum Ekle</button></center>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
