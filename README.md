@@ -13,8 +13,13 @@ Hazırlanan Api Tipi : Rest Api </br>
 
 ## Geliştirme Notları
 Bu Kısımda Versiyonlarla Beraber Eklenen Notlar Yer Alacaktır. </br>
+
 ### Versiyon.0.1 
 Uygulamanın Web Tarafında Yönetim İçin Arayüzleri Ve Kodları Hazırlandı. </br>
 Apiler Yazılmaya Başlandı. </br>
 Mobil Uygulama Boş Bir Şekilde Oluşturuldu. </br>
 Yayınlanma Tarihi 8 Nisan 2019 </br>
+
+### Versiyon.0.2
+Web Tarafının Kullanıcı Arayüzü Büyük Ölçüde Tamamlandı. </br>
+Yayınlanma Tarihi 9 Nisan 2019 </br>

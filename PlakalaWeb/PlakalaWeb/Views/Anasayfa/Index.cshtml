@@ -1,8 +1,386 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
 
-<h2>Burası Anasayfa Kısmı</h2>
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Doe">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Plakala</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="~/dosyalar/images/apple-touch-icon.png">
+
+    <link rel="shortcut icon" type="~/dosyalar/image/ico" href="images/favicon.ico" />
+
+    <!-- Plugin-CSS -->
+    <link href="~/dosyalar/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/dosyalar/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/dosyalar/css/themify-icons.css" rel="stylesheet" />
+    <link href="~/dosyalar/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/dosyalar/css/animate.css" rel="stylesheet" />
+    <!-- Main-Stylesheets -->
+    <link href="~/dosyalar/css/normalize.css" rel="stylesheet" />
+    <link href="~/dosyalar/style.css" rel="stylesheet" />
+    <link href="~/dosyalar/css/responsive.css" rel="stylesheet" />
+    <script src="~/dosyalar/js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#primary-menu">
+
+    <div class="preloader">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+    <!--Mainmenu-area-->
+    <div class="mainmenu-area" data-spy="affix" data-offset-top="100">
+        <div class="container">
+            <!--Logo-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand logo">
+                    <h2>Plakala</h2>
+                </a>
+            </div>
+            <!--Logo/-->
+            <nav class="collapse navbar-collapse" id="primary-menu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#home-page">Anasayfa</a></li>
+                    <li><a href="#service-page">Nedir</a></li>
+                    <li><a href="#price-page">İndir</a></li>
+                    <li><a href="#team-page">Takım</a></li>
+                    <li><a href="#faq-page">S.S.S</a></li>
+                    <li><a href="#contact-page">İletişim</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--Mainmenu-area/-->
+    <!--Header-area-->
+    <header class="header-area overlay full-height relative v-center" id="home-page">
+        <div class="absolute anlge-bg"></div>
+        <div class="container">
+            <div class="row v-center">
+                <div class="col-xs-12 col-md-7 header-text">
+                    <h2>Plakala</h2>
+                    <p>Trafikte Karşılaştığın Araçlar Hakkında Yorum Mu Yazmak İstiyorsun.Plakala Araçlar Hakkında Yorum Yapmanızı Sağlayan Bir Mobil Uygulamadır.</p>
+                    <a href="#" class="button white">Hemen İndir</a>
+                </div>
+                <div class="hidden-xs hidden-sm col-md-5 text-right">
+                    <div class="screen-box screen-slider">
+                        <div class="item">
+                            <img src="~/dosyalar/images/screen-1.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="~/dosyalar/images/screen-2.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="~/dosyalar/images/screen-3.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="~/dosyalar/images/screen-4.jpg" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="~/dosyalar/images/screen-5.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--Header-area/-->
+    <!--Feature-area-->
+    <section class="gray-bg section-padding" id="service-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="box">
+                        <div class="box-icon">
+                            <img src="~/dosyalar/images/service-icon-1.png" alt="">
+                        </div>
+                        <h4>İNDİR</h4>
+                        <p>Ücretsiz Olarak Hemen Plakala Uygulamasını Akıllı Telefonuna İndir.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="box">
+                        <div class="box-icon">
+                            <img src="~/dosyalar/images/service-icon-2.png" alt="">
+                        </div>
+                        <h4>OKU</h4>
+                        <p>Plakalar Hakkında Yazılan Yorumları Oku. Ve Senin Plakan Hakkında Yazılanları.</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="box">
+                        <div class="box-icon">
+                            <img src="~/dosyalar/images/service-icon-3.png" alt="">
+                        </div>
+                        <h4>YAZ</h4>
+                        <p>Hemen Sende Bir Plaka Hakkında Yorum Yaz. Unutma Anonim Kalacaksın.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Feature-area/-->
+
+
+
+
+
+
+    <section class="price-area overlay section-padding" id="price-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                    <div class="page-title">
+                        <h2>Plakala İNDİR</h2>
+                        <p>Plaka Uygulamasını Hemen Ücretsiz Olarak Telefonuna İndir</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="price-table active">
+                        <span class="price-info"><span class="ti-crown"></span></span>
+                        <h3 class="text-uppercase price-title">GOOGLE PLAY</h3>
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li>- Üyelik Gerektirmez</li>
+                            <li>- Ücretsiz</li>
+                            <li>- Hemen Oku</li>
+                            <li>- Hızlıca Yaz</li>
+                            <li>- Etkileşime Gir</li>
+                        </ul>
+                        <hr>
+                        <a href="#" class="button">Hemen İndir</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section-padding gray-bg" id="team-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                    <div class="page-title">
+                        <h2>TAKIM</h2>
+                        <p>Plakala Uygulamasını Geliştiren Takımımız.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="single-team">
+                        <div class="team-photo">
+                            <img src="~/dosyalar/images/team-section-1.png" alt="">
+                        </div>
+                        <h4>Berke Kurnaz</h4>
+                        <h6>Yazılım Geliştiricisi</h6>
+                        <ul class="social-menu">
+                            <li><a href="#"><i class="ti-facebook"></i></a></li>
+                            <li><a href="#"><i class="ti-twitter"></i></a></li>
+                            <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                            <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="gray-bg section-padding" id="faq-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                    <div class="page-title">
+                        <h2>Sık Sorulan Sorular</h2>
+                        <p>Plakala Uygulaması Hakkında Sık Sorulan Sorular</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Plakala Uygulaması Nedir ?</a>
+                            </h4>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <p>Plakala Uygulaması Her Gün Trafikte Karşılaştığımız, Bir Şekilde Etkileşime Geçtiğimiz İnsanlar Hakkında Plakalar Üzerinden Yorum Yapmamıza İmkan Veren Ve İnsanların Bizim Hakkımızda Yazdığı Yorumları Okuduğumuz Bir Mobil Uygulamadır.</p>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Uygulama Üyelik Gerektiriyor Mu ?</a>
+                            </h4>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <p>Uygulamamız Ücretsizdir Ve Sonsuza Kadar Ücretsiz Olarak Kalacaktır.</p>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">İstediğim Her Şeyi Yazabilir Miyim ?</a>
+                            </h4>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <p>Uygulama İçerisinde Yazılan Yorumlar Ekibimiz Tarafından Denetlenmekte Ve Kötü Yorumlar Silinmektedir. Fakat Amacımız Özgür Bir Şekilde Bireylerin Duygu Ve Düşüncelerini Paylaşması Olduğu İçin Bu Aşamada Fazla Bir Denetleme Yapmıyoruz.</p>
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Neden Sadece Android Sürümü Var ?</a>
+                            </h4>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <p>Plakala Uygulamasının IOS Cihazlar İçin Geliştirilme Süreci Devam Edilmektedir. Uygulama Hazır Olduğu An Markette Ücretsiz Olarak Yayınlanacaktır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="footer-area relative sky-bg" id="contact-page">
+        <div class="absolute footer-bg"></div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+                        <div class="page-title">
+                            <h2>BİZİMLE İLETİŞİM KUR</h2>
+                            <p>Bizimle Buradaki Bölüm Aracılığıyla İletişim Kurabilirsin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-4">
+                        <address class="side-icon-boxes">
+                            <div class="side-icon-box">
+                                <div class="side-icon">
+                                    <img src="~/dosyalar/images/location-arrow.png" alt="">
+                                </div>
+                                <p><strong>Adres: </strong> Bigadiç, Balıkesir <br />Türkiye</p>
+                            </div>
+                            <div class="side-icon-box">
+                                <div class="side-icon">
+                                    <img src="~/dosyalar/images/phone-arrow.png" alt="">
+                                </div>
+                                <p>
+                                    <strong>Geliştirici: </strong>
+                                    <a href="#">Berke Kurnaz</a> <br />
+                                </p>
+                            </div>
+                            <div class="side-icon-box">
+                                <div class="side-icon">
+                                    <img src="~/dosyalar/images/mail-arrow.png" alt="">
+                                </div>
+                                <p>
+                                    <strong>Mail Adresi: </strong>
+                                    <a href="mailto:plakala@berkekurnaz.com">plakala@berkekurnaz.com</a> <br />
+                                    <a href="mailto:contact@berkekurnaz.com">contact@berkekurnaz.com</a>
+                                </p>
+                            </div>
+                        </address>
+                    </div>
+                    <div class="col-xs-12 col-md-8">
+
+                        <form action="process.php" id="contact-form" method="post" class="contact-form">
+                            <div class="form-double">
+                                <input type="text" id="form-name" name="form-name" placeholder="Adınız Soyadınız" class="form-control" required="required">
+                                <input type="email" id="form-email" name="form-email" class="form-control" placeholder="Mail Adresiniz" required="required">
+                            </div>
+                            <input type="text" id="form-subject" name="form-subject" class="form-control" placeholder="Başlık">
+                            <textarea name="message" id="form-message" name="form-message" rows="5" class="form-control" placeholder="Mesajınız..." required="required"></textarea>
+                            <button type="submit" class="button">Gönder</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center>
+            <div class="footer-middle">
+                <center>
+                    <div class="container">
+                        <center>
+                            <ul class="social-menu">
+                                <li><a href="#"><i class="ti-facebook"></i></a></li>
+                                <li><a href="#"><i class="ti-twitter"></i></a></li>
+                                <li><a href="#"><i class="ti-google"></i></a></li>
+                                <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                <li><a href="#"><i class="ti-github"></i></a></li>
+                            </ul>
+                        </center>
+                    </div>
+                </center>
+            </div>
+        </center>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <p>&copy; @DateTime.Now.Year - Plakala Bir BK Teknoloji Ürünüdür</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!--Vendor-JS-->
+    <script src="~/dosyalar/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/dosyalar/js/vendor/bootstrap.min.js"></script>
+    <!--Plugin-JS-->
+    <script src="~/dosyalar/js/owl.carousel.min.js"></script>
+    <script src="~/dosyalar/js/contact-form.js"></script>
+    <script src="~/dosyalar/js/jquery.parallax-1.1.3.js"></script>
+    <script src="~/dosyalar/js/scrollUp.min.js"></script>
+    <script src="~/dosyalar/js/magnific-popup.min.js"></script>
+    <script src="~/dosyalar/js/wow.min.js"></script>
+    <!--Main-active-JS-->
+    <script src="~/dosyalar/js/main.js"></script>
+</body>
+
+</html>
+
 
