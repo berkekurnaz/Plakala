@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,14 +21,16 @@ namespace PlakalaWeb.Controllers.Api
 
         YorumOperations yorumOperations = new YorumOperations();
 
+        /*
         [HttpGet]
         public IEnumerable<Yorum> Get()
         {
             var query = yorumOperations.GetAllItems().OrderByDescending(x => x.Id);
             return query;
         }
+        */
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetList")]
         public IActionResult Get(int id)
         {
             var query = yorumOperations.GetItemById(id);
@@ -37,15 +41,20 @@ namespace PlakalaWeb.Controllers.Api
             return new ObjectResult(query);
         }
 
-        [HttpPost]
-        public IActionResult Post([FromBody]Yorum newYorum)
+        public IActionResult Get(string plaka)
         {
-            if (newYorum == null)
+            var query = yorumOperations.GetAllItems(plaka).Where(x => x.Plaka == plaka);
+            if (query == null)
             {
-                return BadRequest();
+                return NotFound();
             }
-            yorumOperations.AddItem(newYorum);
-            return CreatedAtRoute("GetProduct", new { id = newYorum.Id }, newYorum);
+            return new ObjectResult(query);
+        }
+
+        [HttpPost]
+        public void Post(Yorum yorum)
+        {
+            yorumOperations.AddItem(yorum);
         }
 
     }

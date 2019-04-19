@@ -26,27 +26,12 @@ namespace PlakalaWeb.DataAccessLayer
         }
 
         /* Belirli Bir Plakaya Ait Butun Kayitlari Getirmek Icin */
-        public List<Yorum> GetAllItems(int id)
+        public List<Yorum> GetAllItems(string plaka)
         {
             var list = new List<Yorum>();
             using (var db = new LiteDatabase(@"myDatabase.db"))
             {
-                var items = db.GetCollection<Yorum>("Yorumlar").Find(x => x.PlakaId == id).ToList();
-                foreach (var item in items)
-                {
-                    list.Add(item);
-                }
-            }
-            return list;
-        }
-
-        /* Belirli Bir Plakaya Ait Butun Kayitlari Getirmek Icin */
-        public List<Yorum> GetAllItems(int id, string txt)
-        {
-            var list = new List<Yorum>();
-            using (var db = new LiteDatabase(@"myDatabase.db"))
-            {
-                var items = db.GetCollection<Yorum>("Yorumlar").Find(x => x.PlakaId == id).ToList();
+                var items = db.GetCollection<Yorum>("Yorumlar").Find(x => x.Plaka == plaka).ToList();
                 foreach (var item in items)
                 {
                     list.Add(item);

@@ -13,7 +13,6 @@ namespace PlakalaWeb.Controllers.Site
     public class YonetimController : Controller
     {
 
-        PlakaOperations plakaOperations = new PlakaOperations();
         YorumOperations yorumOperations = new YorumOperations();
         KullaniciOperations kullaniciOperations = new KullaniciOperations();
         MesajOperations mesajOperations = new MesajOperations();
@@ -21,7 +20,6 @@ namespace PlakalaWeb.Controllers.Site
         [AuthFilter]
         public IActionResult Index()
         {
-            ViewBag.PlakaSayisi = plakaOperations.GetAllItems().Count;
             ViewBag.YorumSayisi = yorumOperations.GetAllItems().Count;
             ViewBag.KullaniciSayisi = kullaniciOperations.GetAllItems().Count;
             ViewBag.MesajSayisi = mesajOperations.GetAllItems().Count;

@@ -13298,11 +13298,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\YazılımProjeleri2019\\Plakala\\PlakalaWeb\\PlakalaWeb\\PlakalaWeb.csproj",
+      "projectUniqueName": "D:\\YazilimProjeleri2019\\Plakala\\PlakalaWeb\\PlakalaWeb\\PlakalaWeb.csproj",
       "projectName": "PlakalaWeb",
-      "projectPath": "D:\\YazılımProjeleri2019\\Plakala\\PlakalaWeb\\PlakalaWeb\\PlakalaWeb.csproj",
+      "projectPath": "D:\\YazilimProjeleri2019\\Plakala\\PlakalaWeb\\PlakalaWeb\\PlakalaWeb.csproj",
       "packagesPath": "C:\\Users\\Berke\\.nuget\\packages\\",
-      "outputPath": "D:\\YazılımProjeleri2019\\Plakala\\PlakalaWeb\\PlakalaWeb\\obj\\",
+      "outputPath": "D:\\YazilimProjeleri2019\\Plakala\\PlakalaWeb\\PlakalaWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

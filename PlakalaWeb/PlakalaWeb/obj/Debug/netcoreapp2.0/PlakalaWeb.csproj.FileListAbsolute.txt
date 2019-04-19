@@ -9,3 +9,14 @@ D:\YazılımProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\
 D:\YazılımProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\bin\Debug\netcoreapp2.0\PlakalaWeb.pdb
 D:\YazılımProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.dll
 D:\YazılımProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.pdb
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\bin\Debug\netcoreapp2.0\PlakalaWeb.deps.json
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\bin\Debug\netcoreapp2.0\PlakalaWeb.runtimeconfig.json
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\bin\Debug\netcoreapp2.0\PlakalaWeb.runtimeconfig.dev.json
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\bin\Debug\netcoreapp2.0\PlakalaWeb.dll
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\bin\Debug\netcoreapp2.0\PlakalaWeb.pdb
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.csprojAssemblyReference.cache
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.csproj.CoreCompileInputs.cache
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.AssemblyInfoInputs.cache
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.AssemblyInfo.cs
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.dll
+D:\YazilimProjeleri2019\Plakala\PlakalaWeb\PlakalaWeb\obj\Debug\netcoreapp2.0\PlakalaWeb.pdb

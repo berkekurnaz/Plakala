@@ -1,4 +1,4 @@
-﻿
+﻿@model  Mesaj
 @{
     ViewData["Title"] = "Index";
     Layout = null;
@@ -320,16 +320,14 @@
                         </address>
                     </div>
                     <div class="col-xs-12 col-md-8">
-
-                        <form action="process.php" id="contact-form" method="post" class="contact-form">
-                            <div class="form-double">
-                                <input type="text" id="form-name" name="form-name" placeholder="Adınız Soyadınız" class="form-control" required="required">
-                                <input type="email" id="form-email" name="form-email" class="form-control" placeholder="Mail Adresiniz" required="required">
-                            </div>
-                            <input type="text" id="form-subject" name="form-subject" class="form-control" placeholder="Başlık">
-                            <textarea name="message" id="form-message" name="form-message" rows="5" class="form-control" placeholder="Mesajınız..." required="required"></textarea>
-                            <button type="submit" class="button">Gönder</button>
-
+                        <form asp-controller="Anasayfa" asp-action="Index" method="post" enctype="multipart/form-data" class="contact-form">
+                                <div class="form-double">
+                                    <input type="text" asp-for="AdSoyad" placeholder="Adınız Soyadınız" class="form-control" required="required">
+                                    <input type="email" asp-for="MailAdresi" class="form-control" placeholder="Mail Adresiniz" required="required">
+                                </div>
+                                <input type="text" asp-for="Baslik" class="form-control" placeholder="Başlık">
+                                <textarea asp-for="Icerik" rows="5" class="form-control" placeholder="Mesajınız..." required="required"></textarea>
+                                <button type="submit" class="button">Gönder</button>
                         </form>
                     </div>
                 </div>

@@ -11,13 +11,13 @@ class MyDrawer extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.list),
-                  Text("Plakala Uygulaması"),
+                  Icon(Icons.list,color: Colors.white,),
+                  Text("Plakala Uygulaması", style: TextStyle(color: Colors.white),),
                 ],
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.amberAccent,
+              color: Colors.black87,
             ),
           ),
           ListTile(
@@ -29,7 +29,7 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.question_answer),
             title: Text('Nedir'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
@@ -37,7 +37,7 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.data_usage),
             title: Text('Nasıl Kullanılır'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
@@ -45,7 +45,7 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.contact_mail),
             title: Text('İletişim'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
@@ -53,7 +53,7 @@ class MyDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.home),
+            leading: Icon(Icons.verified_user),
             title: Text('Kullanıcı Sözleşmesi'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {

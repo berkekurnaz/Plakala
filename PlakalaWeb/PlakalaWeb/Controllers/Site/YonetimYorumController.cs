@@ -61,7 +61,7 @@ namespace PlakalaWeb.Controllers.Site
             }
 
             myEntity.PlakaYorum = entity.PlakaYorum;
-            myEntity.PlakaId = entity.PlakaId;
+            myEntity.Plaka = entity.Plaka;
             myEntity.EklenmeTarihi = DateTime.Now.ToShortDateString();
 
             yorumOperations.AddItem(myEntity);

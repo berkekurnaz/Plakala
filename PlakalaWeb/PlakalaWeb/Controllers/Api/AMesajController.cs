@@ -24,7 +24,7 @@ namespace PlakalaWeb.Controllers.Api
                 return BadRequest();
             }
             mesajOperations.AddItem(newMesaj);
-            return CreatedAtRoute("GetProduct", new { id = newMesaj.Id }, newMesaj);
+            return CreatedAtRoute("GetList", new { id = newMesaj.Id }, newMesaj);
         }
 
     }

@@ -10,5 +10,17 @@ namespace PlakalaWeb.Models
         public int Id { get; set; }
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
+
+        public Kullanici()
+        {
+
+        }
+
+        public Kullanici(string kullaniciAdi, string sifre)
+        {
+            this.KullaniciAdi = kullaniciAdi;
+            this.Sifre = sifre;
+        }
+
     }
 }
