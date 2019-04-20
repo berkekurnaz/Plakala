@@ -1,39 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:plakala_mobil/Screens/addComment.dart';
-    
+
 import 'dart:async';
 import 'dart:convert';
 
 import 'package:plakala_mobil/Screens/detail.dart';
 import 'package:plakala_mobil/Screens/home.dart';
-
+import 'package:plakala_mobil/Widgets/myAppBar.dart';
 
 class Test extends StatefulWidget {
-
   String txtSearch;
 
   Test({this.txtSearch});
 
   @override
   State<StatefulWidget> createState() => _TestState();
-
 }
 
 class _TestState extends State<Test> {
-  
   Future<List> getData() async {
-    final response = await http.get("http://berkekurnaz.com/api/ayorum?plaka=" + widget.txtSearch); //http://localhost:2054/api/AYorum?plaka=10Y3570
+    final response = await http.get("http://berkekurnaz.com/api/ayorum?plaka=" +
+        widget.txtSearch); 
     return json.decode(response.body);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Plakala"),
-        centerTitle: true,
-      ),
+      appBar: MyAppBar(),
       body: FutureBuilder<List>(
         future: getData(),
         builder: (context, snapshot) {
@@ -49,14 +44,15 @@ class _TestState extends State<Test> {
         },
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromRGBO(64, 75, 96, .9),
         child: Icon(Icons.add),
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => AddComment()));
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AddComment()));
         },
       ),
     );
   }
-  
 }
 
 class ItemList extends StatelessWidget {
@@ -68,19 +64,44 @@ class ItemList extends StatelessWidget {
     return new ListView.builder(
       itemCount: list == null ? 0 : list.length,
       itemBuilder: (context, i) {
-        return new Container(
-          padding: const EdgeInsets.all(10.0),
-          child: new GestureDetector(
-            onTap: ()=>Navigator.of(context).push(
-              new MaterialPageRoute(
-                builder: (BuildContext context)=> new Detail(list:list , index: i,)
-              )
-            ),
-            child: new Card(
-              child: new ListTile(
-                title: new Text(list[i]['plakaYorum']),
-                leading: new Icon(Icons.widgets),
-                subtitle: new Text("Plaka : ${list[i]['plaka']}"),
+        return Container(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => new Detail(
+                      list: list,
+                      index: i,
+                    ))),
+            child: Card(
+              elevation: 8.0,
+            margin: new EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+              child: Container(
+                decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+                child: ListTile(
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                  leading: Container(
+                    padding: EdgeInsets.only(right: 12.0),
+                    decoration: new BoxDecoration(
+                        border: new Border(
+                            right: new BorderSide(
+                                width: 1.0, color: Colors.white24))),
+                    child: Icon(Icons.autorenew, color: Colors.white),
+                  ),
+                  title: Text(
+                    printComment(list[i]['plakaYorum'].toString()),
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Row(
+                    children: <Widget>[
+                      Icon(Icons.linear_scale, color: Colors.yellowAccent),
+                      Text("Plaka : ${list[i]['plaka']}",
+                          style: TextStyle(color: Colors.white))
+                    ],
+                  ),
+                  trailing: Icon(Icons.keyboard_arrow_right,
+                      color: Colors.white, size: 30.0)),
               ),
             ),
           ),
@@ -88,4 +109,14 @@ class ItemList extends StatelessWidget {
       },
     );
   }
+
+
+  String printComment(String comment){
+    if(comment.length > 28){
+      return comment = comment.substring(0,28) + "...";
+    }else{
+      return comment;
+    }
+  }
+
 }
