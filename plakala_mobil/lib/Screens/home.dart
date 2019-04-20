@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plakala_mobil/Screens/test.dart';
+import 'package:flutter/services.dart';
+import 'package:plakala_mobil/Screens/commentList.dart';
+
 import 'package:plakala_mobil/Widgets/myAppBar.dart';
 import 'package:plakala_mobil/Widgets/myDrawer.dart';
 
@@ -14,7 +16,7 @@ class _HomeState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: MyAppBar(title: "Plakala",),
       drawer: MyDrawer(),
       body: Center(
         child: Padding(
@@ -24,6 +26,10 @@ class _HomeState extends State {
             children: <Widget>[
               TextField(
                 controller: controllerSearch,
+                inputFormatters: [
+                  LengthLimitingTextInputFormatter(7),
+                ],
+                textCapitalization: TextCapitalization.sentences,
                 decoration: new InputDecoration(
                     hintText: "Aranacak Plaka",              
                     border: OutlineInputBorder(),
@@ -48,8 +54,8 @@ class _HomeState extends State {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Test(
-                                txtSearch: controllerSearch.text,
+                          builder: (context) => CommentList(
+                                txtSearch: controllerSearch.text.toUpperCase(),
                               )));
                 },
               ),

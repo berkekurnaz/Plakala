@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:plakala_mobil/Screens/commentList.dart';
 import 'package:plakala_mobil/Screens/home.dart';
-import 'package:plakala_mobil/Screens/test.dart';
 import 'package:plakala_mobil/Widgets/myAppBar.dart';
 
 class Success extends StatefulWidget {
@@ -23,8 +23,7 @@ class _SuccessState extends State<Success> {
         automaticallyImplyLeading: false,
         title: Text("Plakala"),
         backgroundColor: Colors.black87,
-        centerTitle: true,
-        
+        centerTitle: true,  
       ),
       body: Center(
         
@@ -74,7 +73,7 @@ class _SuccessState extends State<Success> {
               Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Test(
+                          builder: (context) => CommentList(
                                 txtSearch: widget.plaka,
                               )));
             },

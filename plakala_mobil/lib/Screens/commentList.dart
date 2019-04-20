@@ -9,16 +9,16 @@ import 'package:plakala_mobil/Screens/detail.dart';
 import 'package:plakala_mobil/Screens/home.dart';
 import 'package:plakala_mobil/Widgets/myAppBar.dart';
 
-class Test extends StatefulWidget {
+class CommentList extends StatefulWidget {
   String txtSearch;
 
-  Test({this.txtSearch});
+  CommentList({this.txtSearch});
 
   @override
-  State<StatefulWidget> createState() => _TestState();
+  State<StatefulWidget> createState() => _CommentListState();
 }
 
-class _TestState extends State<Test> {
+class _CommentListState extends State<CommentList> {
   Future<List> getData() async {
     final response = await http.get("http://berkekurnaz.com/api/ayorum?plaka=" +
         widget.txtSearch); 
@@ -28,7 +28,7 @@ class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(),
+      appBar: MyAppBar(title: "Yorumlar Listesi",),
       body: FutureBuilder<List>(
         future: getData(),
         builder: (context, snapshot) {

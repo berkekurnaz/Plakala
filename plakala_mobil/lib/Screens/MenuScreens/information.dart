@@ -1,49 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:date_format/date_format.dart';
-import 'package:plakala_mobil/Screens/success.dart';
 import 'package:plakala_mobil/Widgets/myAppBar.dart';
+import 'package:plakala_mobil/Widgets/myDrawer.dart';
 
-class AddComment extends StatefulWidget {
+class Information extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _AddCommentState();
+  State<StatefulWidget> createState() => _InformationState();
 }
 
-class _AddCommentState extends State<AddComment> {
-  TextEditingController controllerPlaka = new TextEditingController();
-  TextEditingController controllerYorum = new TextEditingController();
-
-  void addData() {
-    var url = "http://berkekurnaz.com/api/ayorum";
-
-    if (controllerPlaka.text.length > 1 && controllerYorum.text.length > 5) {
-
-      var now = new DateTime.now();
-
-      http.post(url, body: {
-        "PlakaYorum": controllerYorum.text,
-        "Plaka": controllerPlaka.text.toUpperCase(),
-        "Resim": "bosdeger",
-        "EklenmeTarihi": formatDate(now, [mm, '/', dd, '/', yyyy]).toString(),
-      });
-
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Success(plaka: controllerPlaka.text.toUpperCase(),)));
-
-    }else{
-
-    }
-  }
+class _InformationState extends State {
+  
+  TextEditingController txtAdCtrl = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: "Yorum Ekle",),
+      appBar: MyAppBar(title: "Kullanıcı Sözleşmesi",),
+      drawer: MyDrawer(),
       body: ListView(
         children: <Widget>[
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 15.0),
             child: TextField(
-              controller: controllerPlaka,
+              controller: txtAdCtrl,
               maxLength: 7,
               textCapitalization: TextCapitalization.sentences,
               decoration: new InputDecoration(
@@ -58,7 +36,7 @@ class _AddCommentState extends State<AddComment> {
               child: TextField(
                 maxLines: 5,
                 maxLength: 300,
-                controller: controllerYorum,
+                controller: txtAdCtrl,
                 decoration: new InputDecoration(
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.comment),
@@ -72,12 +50,12 @@ class _AddCommentState extends State<AddComment> {
               height: 50.0,
               child: RaisedButton(
               child: Text(
-                "Yorum Ekle",
+                "Mesaj Gönder",
                 style: TextStyle(color: Colors.white),
               ),
               color: Color.fromRGBO(64, 75, 96, .9),
               onPressed: () {
-                addData();
+                  // Mesaj Gönderme İşlemi
               },
             ),
             ),
@@ -86,4 +64,5 @@ class _AddCommentState extends State<AddComment> {
       ),
     );
   }
+  
 }

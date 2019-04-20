@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:plakala_mobil/Screens/MenuScreens/about.dart';
+import 'package:plakala_mobil/Screens/MenuScreens/contact.dart';
+import 'package:plakala_mobil/Screens/MenuScreens/information.dart';
+import 'package:plakala_mobil/Screens/MenuScreens/use.dart';
+import 'package:plakala_mobil/Screens/home.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -25,7 +30,7 @@ class MyDrawer extends StatelessWidget {
             title: Text('Anasayfa'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              print("Tıklama İşlemi.");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
             },
           ),
           ListTile(
@@ -33,7 +38,7 @@ class MyDrawer extends StatelessWidget {
             title: Text('Nedir'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              print("Tıklama İşlemi.");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => About()));
             },
           ),
           ListTile(
@@ -41,7 +46,7 @@ class MyDrawer extends StatelessWidget {
             title: Text('Nasıl Kullanılır'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              print("Tıklama İşlemi.");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Use()));
             },
           ),
           ListTile(
@@ -49,7 +54,7 @@ class MyDrawer extends StatelessWidget {
             title: Text('İletişim'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              print("Tıklama İşlemi.");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Contact()));
             },
           ),
           ListTile(
@@ -57,7 +62,7 @@ class MyDrawer extends StatelessWidget {
             title: Text('Kullanıcı Sözleşmesi'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              print("Tıklama İşlemi.");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Information()));
             },
           ),
         ],
