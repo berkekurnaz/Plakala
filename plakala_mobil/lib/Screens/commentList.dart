@@ -20,15 +20,17 @@ class CommentList extends StatefulWidget {
 
 class _CommentListState extends State<CommentList> {
   Future<List> getData() async {
-    final response = await http.get("http://berkekurnaz.com/api/ayorum?plaka=" +
-        widget.txtSearch); 
+    final response = await http
+        .get("http://berkekurnaz.com/api/ayorum?plaka=" + widget.txtSearch);
     return json.decode(response.body);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: "Yorumlar Listesi",),
+      appBar: MyAppBar(
+        title: "Yorumlar Listesi",
+      ),
       body: FutureBuilder<List>(
         future: getData(),
         builder: (context, snapshot) {
@@ -37,6 +39,7 @@ class _CommentListState extends State<CommentList> {
           return snapshot.hasData
               ? ItemList(
                   list: snapshot.data,
+                  count: snapshot.data.length,
                 )
               : Center(
                   child: new CircularProgressIndicator(),
@@ -56,13 +59,14 @@ class _CommentListState extends State<CommentList> {
 }
 
 class ItemList extends StatelessWidget {
-  final List list;
-  ItemList({this.list});
+  List list;
+  int count;
+  ItemList({this.list, this.count});
 
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
-      itemCount: list == null ? 0 : list.length,
+    return ListView.builder(
+      itemCount: count,
       itemBuilder: (context, i) {
         return Container(
           padding: const EdgeInsets.all(8.0),
@@ -74,34 +78,35 @@ class ItemList extends StatelessWidget {
                     ))),
             child: Card(
               elevation: 8.0,
-            margin: new EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+              margin: new EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: Container(
-                decoration: BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
+                decoration:
+                    BoxDecoration(color: Color.fromRGBO(64, 75, 96, .9)),
                 child: ListTile(
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                  leading: Container(
-                    padding: EdgeInsets.only(right: 12.0),
-                    decoration: new BoxDecoration(
-                        border: new Border(
-                            right: new BorderSide(
-                                width: 1.0, color: Colors.white24))),
-                    child: Icon(Icons.autorenew, color: Colors.white),
-                  ),
-                  title: Text(
-                    printComment(list[i]['plakaYorum'].toString()),
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: Row(
-                    children: <Widget>[
-                      Icon(Icons.linear_scale, color: Colors.yellowAccent),
-                      Text("Plaka : ${list[i]['plaka']}",
-                          style: TextStyle(color: Colors.white))
-                    ],
-                  ),
-                  trailing: Icon(Icons.keyboard_arrow_right,
-                      color: Colors.white, size: 30.0)),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                    leading: Container(
+                      padding: EdgeInsets.only(right: 12.0),
+                      decoration: new BoxDecoration(
+                          border: new Border(
+                              right: new BorderSide(
+                                  width: 1.0, color: Colors.white24))),
+                      child: Icon(Icons.autorenew, color: Colors.white),
+                    ),
+                    title: Text(
+                      printComment(list[i]['plakaYorum'].toString()),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Row(
+                      children: <Widget>[
+                        Icon(Icons.linear_scale, color: Colors.yellowAccent),
+                        Text("Plaka : ${list[i]['plaka']}",
+                            style: TextStyle(color: Colors.white))
+                      ],
+                    ),
+                    trailing: Icon(Icons.keyboard_arrow_right,
+                        color: Colors.white, size: 30.0)),
               ),
             ),
           ),
@@ -110,13 +115,11 @@ class ItemList extends StatelessWidget {
     );
   }
 
-
-  String printComment(String comment){
-    if(comment.length > 28){
-      return comment = comment.substring(0,28) + "...";
-    }else{
+  String printComment(String comment) {
+    if (comment.length > 28) {
+      return comment = comment.substring(0, 28) + "...";
+    } else {
       return comment;
     }
   }
-
 }
