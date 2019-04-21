@@ -16,8 +16,8 @@ namespace PlakalaWeb.Controllers.Api
     public class AYorumController : Controller
     {
 
-        /* Butun Yorumların Listesi    : www.plakala.berkekurnaz.com/api/AYorum   */
-        /* Berlirli Bir Plaka Ait Yorumlar : www.plakala.berkekurnaz.com/api/AYorum/2 */
+        /* Butun Yorumların Listesi    : www.plakala.berkekurnaz.com/api/AYorum */
+        /* Berlirli Bir Plaka Ait Yorumlar : www.plakala.berkekurnaz.com/api/AYorum?plaka={plaka} */
 
         YorumOperations yorumOperations = new YorumOperations();
 

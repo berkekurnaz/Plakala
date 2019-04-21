@@ -17,14 +17,9 @@ namespace PlakalaWeb.Controllers.Api
         MesajOperations mesajOperations = new MesajOperations();
 
         [HttpPost]
-        public IActionResult Post([FromBody]Mesaj newMesaj)
+        public void Post(Mesaj mesaj)
         {
-            if (newMesaj == null)
-            {
-                return BadRequest();
-            }
-            mesajOperations.AddItem(newMesaj);
-            return CreatedAtRoute("GetList", new { id = newMesaj.Id }, newMesaj);
+            mesajOperations.AddItem(mesaj);
         }
 
     }
