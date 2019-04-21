@@ -8,9 +8,12 @@ class Use extends StatefulWidget {
 }
 
 class _UseState extends State {
-  String birinciAdim = "1-) Adim";
-  String ikinciAdim = "2-) Adim";
-  String ucuncuAdim = "3-) Adim";
+  String birinciAdim = "1-) Yorumlarını Okumak İstediğiniz Plakayı Arayın.";
+  String ikinciAdim =
+      "2-) Ekleme Butonuna Tıklayarak Yorum Ekleme Sayfasına Gidin.";
+  String ucuncuAdim =
+      "3-) Plakayı Ve Yorumu İlgili Alanlara Yazarak Ekleme Butonuna Tıklayın.";
+  String dorduncuAdim = "4-) Aynı Plakayı Arayarak Yorumunuzu Görebilirsiniz.";
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +22,19 @@ class _UseState extends State {
         title: "Nasıl Kullanılır",
       ),
       drawer: MyDrawer(),
-      body: ListView(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          printUse(birinciAdim),
-          printUse(ikinciAdim),
-          printUse(ucuncuAdim),
+          printUse(str: birinciAdim),
+          printUse(str: ikinciAdim),
+          printUse(str: ucuncuAdim),
+          printUse(str: dorduncuAdim),
         ],
       ),
     );
   }
 
-  Card printUse(String str) {
+  Card printUse({String str}) {
     return Card(
       elevation: 8.0,
       margin: new EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
@@ -46,7 +51,7 @@ class _UseState extends State {
             child: Icon(Icons.directions_car, color: Colors.white),
           ),
           title: Text(
-            "$str",
+            "${str}",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:plakala_mobil/Screens/MenuScreens/successMessage.dart';
 import 'package:plakala_mobil/Widgets/myAppBar.dart';
 import 'package:plakala_mobil/Widgets/myDrawer.dart';
+import 'package:http/http.dart' as http;
+import 'package:date_format/date_format.dart';
 
 class Contact extends StatefulWidget {
   @override
@@ -10,6 +13,31 @@ class Contact extends StatefulWidget {
 class _ContactState extends State {
   
   TextEditingController txtAdCtrl = new TextEditingController();
+  TextEditingController txtMailCtrl = new TextEditingController();
+  TextEditingController txtBaslikCtrl = new TextEditingController();
+  TextEditingController txtIcerikCtrl = new TextEditingController();
+
+  void addData() {
+    var url = "http://berkekurnaz.com/api/amesaj";
+
+    if (txtAdCtrl.text.length > 3 && txtMailCtrl.text.length > 5 && txtBaslikCtrl.text.length > 10 && txtIcerikCtrl.text.length > 10) {
+
+      var now = new DateTime.now();
+
+      http.post(url, body: {
+        "AdSoyad": txtAdCtrl.text,
+        "MailAdresi": txtMailCtrl.text,
+        "Baslik": txtBaslikCtrl.text,
+        "Icerik": txtIcerikCtrl.text,
+        "EklenmeTarihi": formatDate(now, [mm, '/', dd, '/', yyyy]).toString(),
+      });
+
+      Navigator.push(context, MaterialPageRoute(builder: (context) => SuccessMessage()));
+
+    }else{
+
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +63,7 @@ class _ContactState extends State {
             child: Container(
               child: TextField(
                 maxLength: 100,
-                controller: txtAdCtrl,
+                controller: txtMailCtrl,
                 decoration: new InputDecoration(
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.mail),
@@ -48,7 +76,7 @@ class _ContactState extends State {
             child: Container(
               child: TextField(
                 maxLength: 100,
-                controller: txtAdCtrl,
+                controller: txtBaslikCtrl,
                 decoration: new InputDecoration(
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.tab),
@@ -62,7 +90,7 @@ class _ContactState extends State {
               child: TextField(
                 maxLines: 5,
                 maxLength: 300,
-                controller: txtAdCtrl,
+                controller: txtIcerikCtrl,
                 decoration: new InputDecoration(
                     border: OutlineInputBorder(),
                     icon: Icon(Icons.comment),
@@ -81,7 +109,7 @@ class _ContactState extends State {
               ),
               color: Color.fromRGBO(64, 75, 96, .9),
               onPressed: () {
-                  // Mesaj Gönderme İşlemi
+                  addData();
               },
             ),
             ),
