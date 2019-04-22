@@ -19,9 +19,9 @@ class _AddCommentState extends State<AddComment> {
   String attention = "";
 
   void addData() {
-    var url = "http://berkekurnaz.com/api/ayorum";
+    var url = "http://plakala.xyz/api/ayorum";
 
-    if (controllerPlaka.text.length > 1 && controllerYorum.text.length > 5 && controllerPlaka.text.startsWith(new RegExp('[0-9]'))) {
+    if (controllerPlaka.text.length > 1 && controllerYorum.text.length > 5 && controllerPlaka.text.startsWith(new RegExp('[0-9]')) ) {
 
       attention = "";
       var now = new DateTime.now();

@@ -18,7 +18,7 @@ class _ContactState extends State {
   TextEditingController txtIcerikCtrl = new TextEditingController();
 
   void addData() {
-    var url = "http://berkekurnaz.com/api/amesaj";
+    var url = "http://plakala.xyz/api/amesaj";
 
     if (txtAdCtrl.text.length > 3 && txtMailCtrl.text.length > 5 && txtBaslikCtrl.text.length > 10 && txtIcerikCtrl.text.length > 10) {
 

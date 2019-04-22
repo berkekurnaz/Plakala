@@ -21,7 +21,7 @@ class CommentList extends StatefulWidget {
 class _CommentListState extends State<CommentList> {
   Future<List> getData() async {
     final response = await http
-        .get("http://berkekurnaz.com/api/ayorum?plaka=" + widget.txtSearch);
+        .get("http://plakala.xyz/api/ayorum?plaka=" + widget.txtSearch);
     return json.decode(response.body);
   }
 
@@ -189,7 +189,7 @@ class ItemList extends StatelessWidget {
                             border: new Border(
                                 right: new BorderSide(
                                     width: 1.0, color: Colors.white24))),
-                        child: Icon(Icons.autorenew, color: Colors.white),
+                        child: Icon(Icons.directions_car, color: Colors.white),
                       ),
                       title: Text(
                         printComment(list[i]['plakaYorum'].toString()),

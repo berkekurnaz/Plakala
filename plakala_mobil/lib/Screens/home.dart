@@ -18,7 +18,7 @@ class _HomeState extends State {
   String attention = "";
 
   void search(String str) {
-    if (str.length > 4) {
+    if (str.length > 4 && str.startsWith(new RegExp('[0-9]'))) {
       attention = "";
       Navigator.push(
           context,
