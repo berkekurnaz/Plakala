@@ -43,7 +43,7 @@ namespace PlakalaWeb.Controllers.Api
 
         public IActionResult Get(string plaka)
         {
-            var query = yorumOperations.GetAllItems(plaka).Where(x => x.Plaka == plaka);
+            var query = yorumOperations.GetAllItems(plaka).Where(x => x.Plaka == plaka).OrderByDescending(x => x.Id);
             if (query == null)
             {
                 return NotFound();

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:date_format/date_format.dart';
 import 'package:plakala_mobil/Screens/success.dart';
+import 'package:plakala_mobil/Utilities/myToUpperCaseFormatter.dart';
+import 'package:plakala_mobil/Utilities/plateStringFormatter.dart';
 import 'package:plakala_mobil/Widgets/myAppBar.dart';
 
 class AddComment extends StatefulWidget {
@@ -13,11 +16,14 @@ class _AddCommentState extends State<AddComment> {
   TextEditingController controllerPlaka = new TextEditingController();
   TextEditingController controllerYorum = new TextEditingController();
 
+  String attention = "";
+
   void addData() {
     var url = "http://berkekurnaz.com/api/ayorum";
 
-    if (controllerPlaka.text.length > 1 && controllerYorum.text.length > 5) {
+    if (controllerPlaka.text.length > 1 && controllerYorum.text.length > 5 && controllerPlaka.text.startsWith(new RegExp('[0-9]'))) {
 
+      attention = "";
       var now = new DateTime.now();
 
       http.post(url, body: {
@@ -30,7 +36,9 @@ class _AddCommentState extends State<AddComment> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => Success(plaka: controllerPlaka.text.toUpperCase(),)));
 
     }else{
-
+      setState(() {
+        attention = "* Lütfen Gerekli Alanları Doğru Olarak Doldurunuz."; 
+      });
     }
   }
 
@@ -46,6 +54,11 @@ class _AddCommentState extends State<AddComment> {
               controller: controllerPlaka,
               maxLength: 7,
               textCapitalization: TextCapitalization.sentences,
+              inputFormatters: [
+                  LengthLimitingTextInputFormatter(7),
+                  PlateStringFormatter(),
+                  MyToUpperCaseFormatter(),
+                ],
               decoration: new InputDecoration(
                   border: OutlineInputBorder(),
                   icon: Icon(Icons.directions_car),
@@ -82,6 +95,7 @@ class _AddCommentState extends State<AddComment> {
             ),
             ),
           ),
+          Text("$attention",textAlign: TextAlign.center ,style: TextStyle(color: Colors.red,),),
         ],
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:plakala_mobil/Screens/commentList.dart';
+import 'package:plakala_mobil/Utilities/myToUpperCaseFormatter.dart';
+import 'package:plakala_mobil/Utilities/plateStringFormatter.dart';
 
 import 'package:plakala_mobil/Widgets/myAppBar.dart';
 import 'package:plakala_mobil/Widgets/myDrawer.dart';
@@ -13,10 +15,30 @@ class Home extends StatefulWidget {
 class _HomeState extends State {
   TextEditingController controllerSearch = new TextEditingController();
 
+  String attention = "";
+
+  void search(String str) {
+    if (str.length > 4) {
+      attention = "";
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => CommentList(
+                    txtSearch: controllerSearch.text.toUpperCase(),
+                  )));
+    } else {
+      setState(() {
+        attention = "* Lütfen Doğru Bir Plaka Değeri Giriniz"; 
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: "Plakala",),
+      appBar: MyAppBar(
+        title: "Plakala",
+      ),
       drawer: MyDrawer(),
       body: Center(
         child: Padding(
@@ -28,10 +50,12 @@ class _HomeState extends State {
                 controller: controllerSearch,
                 inputFormatters: [
                   LengthLimitingTextInputFormatter(7),
+                  PlateStringFormatter(),
+                  MyToUpperCaseFormatter(),
                 ],
                 textCapitalization: TextCapitalization.sentences,
                 decoration: new InputDecoration(
-                    hintText: "Aranacak Plaka",              
+                    hintText: "Aranacak Plaka",
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder()),
               ),
@@ -42,7 +66,10 @@ class _HomeState extends State {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Icon(Icons.search,color: Colors.white,),
+                    Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    ),
                     Text(
                       "Arama Yap",
                       style: TextStyle(color: Colors.white),
@@ -51,13 +78,13 @@ class _HomeState extends State {
                 ),
                 color: Colors.black87,
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CommentList(
-                                txtSearch: controllerSearch.text.toUpperCase(),
-                              )));
+                  search(controllerSearch.text.toUpperCase());
                 },
+              ),
+              Text(
+                "$attention",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.red),
               ),
             ],
           ),
