@@ -5,7 +5,7 @@ Plakala Trafikte Gördüğünüz, Bir Şekilde Etkileşime Geçtiğiniz Araçlar
 ## Detaylar
 Web İçin Kullanılan Framework : .Net Core Mvc </br>
 Mobil İçin Geliştirme Ortamı : Flutter </br>
-Kullanılan Veritabanı : SQLite </br>
+Kullanılan Veritabanı : LiteDB </br>
 Hazırlanan Api Tipi : Rest Api </br>
 
 ## Geliştiriciler
