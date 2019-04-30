@@ -9,4 +9,11 @@ Kullanılan Veritabanı : LiteDB </br>
 Hazırlanan Api Tipi : Rest Api </br>
 
 ## Geliştiriciler
-- Berke Kurnaz </br>
+* **Berke Kurnaz** - [Github Profili](https://github.com/berkekurnaz)</br>  	
+* **Ferhat Demir** - [Github Profili](https://github.com/dferhat)</br>  	
+
+## İnternet Sitesi
+www.plakala.xyz </br>
+
+## Google Play
+https://play.google.com/store/apps/details?id=com.berkekurnaz.plakala&hl=tr </br>

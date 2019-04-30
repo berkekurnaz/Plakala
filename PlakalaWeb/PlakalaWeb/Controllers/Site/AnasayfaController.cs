@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PlakalaWeb.DataAccessLayer;
 using PlakalaWeb.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace PlakalaWeb.Controllers.Site
 {
@@ -12,6 +13,7 @@ namespace PlakalaWeb.Controllers.Site
     {
 
         MesajOperations mesajOperations = new MesajOperations();
+        YorumOperations yorumOperations = new YorumOperations();
 
         public IActionResult Index()
         {
@@ -28,6 +30,31 @@ namespace PlakalaWeb.Controllers.Site
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        public IActionResult Plaka()
+        {
+            return View();
+        }
+
+        public IActionResult Listele(string plaka, int sayfa=1)
+        {
+            var list = yorumOperations.GetAllItems(plaka);
+            var model = PagingList.Create(list, 10, sayfa);
+            ViewBag.PlakaAdi = plaka;
+            ViewBag.PlakaSayisi = list.Count;
+            return View(model);
+        }
+
+        public IActionResult Yorum(int id)
+        {
+            var yorum = yorumOperations.GetItemById(id);
+            if (yorum == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.YorumPlaka = yorum.Plaka;
+            return View(yorum);
         }
 
     }
